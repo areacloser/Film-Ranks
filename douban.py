@@ -1,9 +1,11 @@
 "Special Thanks To Douban"
 
+print("Great Films On Top 250 In Douban -- By lanlan2_")
+
+print("Loading", end="")
+
 import requests
 from bs4 import BeautifulSoup
-
-print("Great Films On Top 250 In Douban -- By lanlan2_")
 
 nameli = []
 rateli = []
@@ -14,7 +16,7 @@ headers = {
 count = 1
 pagenum = 0
 
-print("Loading", end="")
+print(".", end="")
 for i in range(10):
     resp = requests.get("https://movie.douban.com/top250?start="+str(pagenum), headers=headers)
     resp.encoding = "utf-8"
@@ -39,3 +41,5 @@ for i in range(10):
 print("")
 for name in nameli:
     print(name)
+
+input("Press RETURN to exit the program.")
